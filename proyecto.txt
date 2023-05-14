@@ -1,0 +1,40 @@
+Car Rental
+
+El proyecto consiste en una plataforma que permita rentar un automóvil por X cantidad de días. Se especifíca la locación del pickup y del dropout.
+
+El usuario se puede autentificar creando una cuenta, si decide no crear una cuenta aún así puede realizar una renta y se le da un número de serie 
+para el seguimiento y la edición de reserva.
+
+No puede editar una reserva al falta 24 hrs o menos.
+
+Se cuenta con una categoría para los automóviles.
+
+Usuario
+-nombre(s)
+-apellido(s)
+-correo
+-datos de facturación
+-domicilio de facturación
+-fecha de nacimiento
+
+Datos de facturación
+-curp
+-razon social
+-rfc
+
+Carro
+-placas
+-color
+-marca
+-modelo
+-año
+-categoría
+
+Categoría de Carro
+-nombre
+-precio de categoría
+
+
+locación
+-nombre
+-tipo 

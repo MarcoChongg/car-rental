@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    container_name: postgresql
+    environment:
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_DB= fastapi
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - '5432:5432'
+    volumes: 
+      - ./db/data:/var/lib/postgresql/data
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    working_dir: /app
+    container_name: app
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./app:/app
+    depends_on:
+      - db
+    #restart: on-failure
